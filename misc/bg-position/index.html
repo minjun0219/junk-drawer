@@ -16,6 +16,20 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+<style>
+#bg-position th,
+#bg-position td{padding:3px}
+#bg-position th{width:100px;text-align:right;padding-right:10px;}
+#bg-position input,
+#bg-position label{vertical-align:middle;border:0;}
+#bg-position input[type="radio"]{margin-top:-2px}
+#bg-position input.text{margin:0;border:0;font-size:12px;padding:5px;text-shadow:none;background-color:#ebebeb;box-shadow:inset 1px 1px 2px #bbb;border-radius:5px}
+#bg-position .btn-submit{width:200px;height:30px;padding:0 0 1px 10px;text-align:left;cursor:pointer;background-color:#00bff3;font-style:italic;font-size:.9em;text-shadow:none;border-radius:5px}
+#bg-position td em{font-style:normal;font-size:0.9em;margin-left:10px}
+#bg-position-loop{font-family:Monaco,Consolas,'Lucida Console',monospace,sans-serif;font-size:1.25em}
+#bg-position-loop .property{color:#6d79de}
+#bg-position-loop .value{color:#2b2be5}
+</style>
 </head>
 <body>
 
@@ -47,9 +61,9 @@
 							<tr>
 								<th>Pixel</th>
 								<td>
-									<input type="text" name="px_x" value="" style="width:80px" class="text" />&nbsp;px
+									<input type="text" name="px_x" value="" style="width:80px" class="text" placeholder="x" />&nbsp;px
 									&nbsp;/&nbsp;
-									<input type="text" name="px_y" value="" style="width:80px" class="text" />&nbsp;px
+									<input type="text" name="px_y" value="" style="width:80px" class="text" placeholder="y" />&nbsp;px
 								</td>
 							</tr>
 							<tr>

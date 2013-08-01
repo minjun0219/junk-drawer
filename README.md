@@ -8,6 +8,7 @@
 
 - [progressbar01](http://3600s.github.io/works/css/progressbar01/)
 - [userphoto01](http://3600s.github.io/works/css/userphoto01/)
+- [flavalogo](http://3600s.github.io/works/css/flavalogo/)
 
 ### jquery
 
