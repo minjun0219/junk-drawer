@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>input range</title>
+<link rel="stylesheet" media="screen" href="style.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="jquery.grab.js"></script> <!-- https://github.com/jussi-kalliokoski/jQuery.grab -->
+</head>
+
+<body>
+<input id="photo-zoom-range" class="input-range" type="range" value="50" min="0" max="100" />
+<p>Value: <span>50</span></p>
+<p>Browser: Safari, Chrome</p>
+<br />
+<div class="input-range" id="photo-zoom-range2">
+	<div class="input-range-wrap">
+		<div class="slider-thumb"></div>
+	</div>
+</div>
+<p>Value: <span>50</span></p>
+<p>Browser: IE 8+, Safari, Opera, Firefox</p>
+<br />
+<p><a href="http://www.takeflava.com">Flava Web</a>에 사용되는 UI입니다.</p>
+
+<script>
+jQuery(function($){
+	$('#photo-zoom-range,#photo-zoom-range2').bind('change', function() {
+		var val = $(this).val();
+		console.log( val );
+		$(this).next().children('span').text( val );
+	});
+	var input_range = $('div.input-range');
+	function progress_control( pos_x ){
+
+		var thumb		= input_range.children().children(),
+			width		= input_range.width() - thumb.width(),
+			thumb_per	= ( ( thumb.width() / 2 ) / width ) * 100,
+			per			= ( ( ( ( pos_x - input_range.offset().left ) / width ) * 100 ) - thumb_per );
+
+		per = ( per > 100 ) ? 100 : ( ( per < 0 ) ? 0 : per );
+
+		var val = Math.floor( per );
+
+		thumb.css('left', per + '%');
+
+		if( input_range.val() != val ) {
+			input_range.val( val );
+			input_range.trigger('change');
+		}
+	}
+	input_range.grab({
+		onstart: function() {
+			self.dragging = true;
+		},
+		onmove: function( e ) {
+			progress_control( e.position.x );
+		},
+		onfinish: function( e ) {
+			self.dragging = false;
+			progress_control( e.position.x );
+		}
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="../raphael-min.js"></script>
+<style>
+html,body,div{margin:0;padding:0;overflow:hidden}
+html,body,#bg{height:100%}
+body{position:relative}
+#content{position:absolute;top:50%;left:50%;margin:-200px 0 0 -300px;width:300px;height:200px;background:rgba(245,245,245,0.6);border-radius:10px;padding:5px}
+</style>
+<script>
+window.onload = function () {
+	Raphael( document.getElementById("bg"), "100%", "100%", function(){
+		var r = this;
+
+		function circle( x, y ){
+			var colorRandom = parseInt(Math.random() * (1 << 30)).toString(16).replace(/.*(\w{3})/, '#$1');
+			r.circle( x, y, 2 ).attr({stroke: "none", fill: colorRandom, opacity: 0.6})
+				.animate({
+					r: 50,
+					opacity: 0
+				}, 5000, function(){
+					this.remove();
+				});
+		}
+
+		var b = r.rect(0,0,"100%", "100%").attr({stroke: "none", fill: "#000", opacity: 0});
+		b.mousemove(function( e ){
+			circle( e.x, e.y );
+			//console.log(e);
+		});
+		setInterval(function(){
+			var box = b.getBBox(false);
+			var rand = function( n ){
+				return Math.random() * n;
+			};
+			circle( rand( window.innerWidth ) , rand( window.innerHeight ) );
+		},300);
+	});
+}
+if( window.addEventListener ) {
+	document.getElementById("bg").addEventListener("touchmove", function(e){ e.preventdefault(); }, false);
+}
+</script>
+</head>
+<body>
+<div id="bg"></div>
+<div id="content">
+	<h1>Raphael Test.</h1>
+	<p><a href="#" onclick="document.getElementById('bg').style.backgroundColor='#000';return false;">검은색 배경</a> | <a href="#" onclick="document.getElementById('bg').style.backgroundColor='#fff';return false;">하얀색 배경</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>underfront.com</title>
+<link rel="stylesheet" href="http://underfront.com/dev_dot/css/style.css">
+<link rel="shortcut icon" href="http://underfront.com/dev_dot/favicon.ico" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-522275-12']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+
+	<div id="wrapper">
+		
+		<header>
+			<h1><a href="/"><img src="http://underfront.com/dev_dot/img/underfront.png" width="91" height="97" alt="underfront.com"></a></h1>
+		</header>
+
+		<div id="content">
+			<div id="content-wrap">
+	
+				<article>
+				
+					<p>반복되는 Background Position을 쉽게 조절하기 위한 툴 입니다.</p>
+					
+					<div id="bg-position">
+						<form name="num" onsubmit="return bgposition_loop(this);">
+						<table cellspacing="0" cellpadding="0" border="0">
+						<tbody>
+							<tr>
+								<th>Selector</th>
+								<td><input type="text" name="selector" value=".bg%" class="text" /><em>%는 반복되는 숫자로 치환됩니다.</em></td>
+							</tr>
+							<tr>
+								<th>반복</th>
+								<td><input type="radio" name="ps" id="ps_x" value="x" checked="checked" /><label for="ps_x">X (가로)</label>&nbsp;&nbsp;<input type="radio" name="ps" id="ps_y" value="y" /><label for="ps_y">Y (세로)</label></td>
+							</tr>
+							<tr>
+								<th>Pixel</th>
+								<td>
+									<input type="text" name="px_x" value="" style="width:80px" class="text" />&nbsp;px
+									&nbsp;/&nbsp;
+									<input type="text" name="px_y" value="" style="width:80px" class="text" />&nbsp;px
+								</td>
+							</tr>
+							<tr>
+								<th>반복갯수</th>
+								<td>
+									<input type="text" name="loop" value="5" class="text" />
+								</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td>
+									<input type="submit" value="계산" class="btn-submit" />
+								</td>
+							</tr>
+						</tbody>
+						</table>
+						</form>
+					</div>
+					<div id="bg-position-loop"></div>
+		
+				</article>
+		
+			</div>
+		
+		</div>
+	
+<script type="text/javascript">
+function bgposition_loop(f){
+	var ns = document.getElementById('bg-position-loop');
+	var s = f.selector.value;
+	var n = parseFloat( f.loop.value );
+	var px = [ parseFloat( f.px_x.value ) , parseFloat( f.px_y.value ) ];
+	var ps = f.ps[0].checked ? f.ps[0].value : ( f.ps[1].checked ? f.ps[1].value : undefined );
+
+	if( s == undefined ){ alert("Selector를 입력해 주세요!"); f.selector.focus(); return false; }
+	if( isNaN( px[0] ) ){ alert("x pixel을 입력해 주세요!"); f.px_x.focus(); return false; }
+	if( isNaN( px[1] ) ){ alert("y pixel을 입력해 주세요!"); f.px_y.focus(); return false; }
+	if( isNaN( n ) ){ alert("갯수를 입력해 주세요!"); f.loop.focus(); return false; }
+	if( n < 1 ){ alert("1개 이상을 입력 해 주세요."); f.loop.select(); return false; }
+	if( ps == undefined ){ alert("x 또는 y를 선택하세요!"); f.ps[0].focus(); return false; }
+
+	var span = function( c, v ){
+		var t = document.createElement("span");
+		t.setAttribute("class", c);
+		t.appendChild( document.createTextNode( v ) );
+		return t;
+	}
+
+	var b = document.createElement('div');
+	b.appendChild( document.createElement('hr') );
+	for(var i=0; i<n; i++){
+		var po = ps == "x" ? ( ( i * px[0] ) + "px " + px[1] + "px" ) : ( px[0] + "px " + ( i * px[1] ) + "px" );
+		b.appendChild( document.createTextNode( ( s.indexOf("%") > -1 ) ? s.replace("%", ( i+1 ) ) : s ) );
+		b.appendChild( document.createTextNode('{') );
+		b.appendChild( span("property","background-position") );
+		b.appendChild( document.createTextNode(': ') );
+		b.appendChild( span("value",po) );
+		b.appendChild( document.createTextNode(';}') );
+		b.appendChild( document.createElement('br') );
+	}
+	ns.insertBefore( b, ns.getElementsByTagName('div')[0] );
+
+	return false;
+}
+</script>
+
+	</div>
+	
+</body>
+</html>

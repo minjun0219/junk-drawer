@@ -1,0 +1,33 @@
+@charset "utf-8";
+html,body,form,h1,h2,h3,h4,div,p,ul,ol{margin:0;padding:0}
+img,input,textarea,button,form{border:0}
+button{cursor:pointer}
+ul,ol,li{list-style:none}
+hr{margin:20px 0;border:0;border-top:1px solid #ebebeb}
+body{background:url('../images/bg_top.png') no-repeat 50% 0;font-size:.8em;color:#707070}
+body,div,span,a{font-family:'돋움','Dotum','Helvetica Nenu',Verdana,Tahome}
+a{color:#959595;text-decoration:none}
+a:hover{text-decoration:underline}
+#wrap{width:900px;margin:0 auto;padding-bottom:20px;position:relative;}
+
+/* Header */
+#header{position:relative;height:67px;padding:42px 6px 0}
+#header h1{float:left}
+#header #gnb{position:absolute;top:10px;right:-4px}
+#header #nav{float:right;margin:20px 0 0}
+ul#gnb li{float:left;padding:0 10px;background:url('../images/bg_gnb_bar.gif') no-repeat 100% 50%}
+ul#gnb li.last{background:none}
+ul#nav li{float:left;height:40px;padding:1px 40px;background:url('../images/bg_nav_bar.gif') no-repeat 0 0}
+ul#nav li a{display:inline-block;overflow:hidden;height:14px}
+ul#nav li a:hover img,ul#nav li a:focus img,ul#nav li a.on img{margin-top:-16px}
+ul#nav li.first{padding-left:0;background:none}
+ul#nav ul{display:none;position:absolute;bottom:-13px;z-index:100;padding:7px 5px 7px 16px}
+ul#nav li.fix ul{display:block}
+ul#nav ul li{height:11px;padding:2px 20px 2px 0;background:none}
+ul#nav ul li a{display:inline-block;overflow:;height:11px}
+ul#nav ul li a img{height:25px}
+ul#nav ul li a:hover img,ul#nav ul li a:focus img,ul#nav ul li a.on img{margin-top:-14px}
+ul#nav ul.sub1{right:200px;background:url('../images/sub1_bg.png') 0 0 no-repeat}
+ul#nav ul.sub2{right:180px;background:url('../images/sub2_bg.png') 0 0 no-repeat}
+ul#nav ul.sub3{right:41px;background:url('../images/sub3_bg.png') 0 0 no-repeat}
+ul#nav ul.sub4{right:9px;background:url('../images/sub4_bg.png') 0 0 no-repeat}

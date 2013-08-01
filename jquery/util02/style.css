@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+* {border:0;padding:0;margin:0;color:#777;font-family:돋움,Trebuchet MS,helvetica,verdana,tahoma;}
+body {font-size:0.75em;}
+ol,ul,li {list-style:none;}
+img {border:0;}
+
+#top_util {position:relative;width:80px;}
+
+.top_btn {padding-left:30px;}
+.top_btn li {display:inline-block;*display:inline;*zoom:1;padding:2px 5px 2px 0;vertical-align:middle;}
+.top_btn li.nobg {background:none;margin-right:0;padding-right:0;}
+.top_btn li a {display:block;position:relative;}
+
+.top_btn img.on {display:none;}
+
+.topbtn_tooltip_finder,
+.topbtn_tooltip_sitemap {position:absolute;top:-23px;display:none;}
+.topbtn_tooltip_finder {left:4px;}
+.topbtn_tooltip_sitemap {left:47px;}

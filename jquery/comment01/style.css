@@ -1,0 +1,33 @@
+/* base */
+*{border-width:0;margin:0;padding:0;}
+ul,ol,li{list-style:none;}
+#skipnav {display:none;}
+body{color:#404040;font-family:Georgia, "Times New Roman", Times, '諛뷀깢' ,'Apple Gothic',  serif;font-size:12px; line-height:18px;}
+a{text-decoration:none;color:#404040;}
+a:hover{text-decoration:underline;color:#ff5300;}
+body{padding:20px;}
+
+/* content */
+#content{width:700px;display:block;padding-bottom:60px;}
+#content .comment-title,
+#content #reply-title{font-style:italic;padding:10px 0;color:#f05324;font-size:12px;font-weight:normal;}
+
+#content #respond{height:269px;border-bottom:1px solid #f05324;}
+#content #respond .comment-notes,
+#content #respond .form-allowed-tags{display:none;}
+#content #respond p .required{display:none;}
+#content #respond input[type=text],
+#content #respond textarea{border:1px solid #f05324;background-color:#fff;font-size:12px;padding:5px;}
+#content #respond input[type=text]{width:201px;}
+#content #respond textarea{width:688px;height:128px;}
+#content #respond p{position:relative;}
+#content #respond p.comment-form-author,
+#content #respond p.comment-form-email,
+#content #respond p.comment-form-url{width:214px;float:left;}
+#content #respond p.comment-form-email,
+#content #respond p.comment-form-url{margin-left:29px;}
+#content #respond p label{text-transform:lowercase;position:absolute;left:6.5px;top:6.5px;color:#ddd;font-size:12px;cursor:text;}
+#content #respond p.comment-form-comment{clear:both;padding-top:12px;}
+#content #respond p.comment-form-comment label{top:18.5px;}
+#content #respond p.form-submit{padding-top:12px;}
+#content #respond p.form-submit input{top:225px;left:0;width:190px;border:0;background-color:#f05324;font-weight:bold;color:#fff;text-align:left;padding:8px;cursor:pointer;}

@@ -1,0 +1,32 @@
+@charset utf-8;
+
+	
+}
+
+body {
+	background-color:#fff;
+	font-family:돋움,Tahoma,Verdana;
+	font-size:.8em;
+}
+
+img {border:0;}
+
+.util {
+	position:absolute;
+}
+
+.util img {
+	margin-left:3px;
+}
+
+/* 확산툴 툴팁 */
+.util span {position:absolute;top:-25px;display:none;}
+.util .util_tooltip_tweet {left:-10px}
+.util .util_tooltip_fbshare {left:-10px}
+.util .util_tooltip_scrap {left:-10px}
+.util .util_tooltip_email {left:8px;}
+.util .util_tooltip_print {left:36px;}
+.util .util_tooltip_image {left:55px;}
+.util .util_tooltip_url {left:80px;}
+.util .util_tooltip_twitter {left:95px;}
+.util .util_tooltip_facebook {left:89px;}

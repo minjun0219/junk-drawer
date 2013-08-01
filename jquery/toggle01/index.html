@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="no" http-equiv="imagetoolbar" />
+		<title>Toggle</title>
+		<style type="text/css">
+			#toggle{border:1px solid black;padding:0;margin:0;position:relative;width:80px;height:20px;background-color:#888;cursor:pointer;}
+			#toggle legend{border:1px solid red;padding:0;margin:0;text-indent:-999px;width:40px;position:absolute;background-color:#ccc;z-index:2;}
+			#toggle input[type=radio]{position:absolute;top:-40px;}
+			#toggle label{position:absolute;top:2px;width:40px;text-align:center;color:#fff;cursor:pointer;}
+			#toggle label[for=toggle-on]{left:0;}
+			#toggle label[for=toggle-off]{right:0;}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(function($){
+				$('#toggle label, #toggle legend').click(function(){
+					console.log('click');
+				
+					var $_this = $('#toggle');
+					var $toggle = $('legend', $_this);
+					var $input = $('input', $_this);
+					if( $('input:checked', $_this).val() == 'ON' ){
+						$toggle.animate({left:'40px'},200);
+						$input[1].checked = true;
+					} else if( $('input:checked', $_this).val() == 'OFF' ){
+						$toggle.animate({left:'0px'},200);
+						$input[0].checked = true;
+					} else {
+						console.error('-_-?');
+						
+					}
+					console.log( $('input:checked', $_this).val() );
+					return false;
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<form name="toggle01">
+			<fieldset id="toggle" class="">
+				<legend>Toggle</legend>
+				<input type="radio" name="toggle" value="ON" id="toggle-on" checked="checked"><label for="toggle-on">ON</label>
+				<input type="radio" name="toggle" value="OFF" id="toggle-off"><label for="toggle-off">OFF</label>
+			</fieldset>
+		</form>
+	</body>
+</html>

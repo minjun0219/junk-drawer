@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/* tab */
+#tabContent{width:960px; margin:83px 10px 0 10px;}
+div.product_tab{width:960px; height:31px; background:url(/brand/infinia/asset/images/product/tab_bg.gif) repeat-x left bottom;}
+div.product_tab ul{*zoom:1;}
+div.product_tab ul:after{content:""; display:block; clear:both; height:0; visibility:hidden;}
+div.product_tab li{float:left;}
+div.product_tab li a{display:block; width:160px; height:31px; overflow:hidden;}
+
+
+.product_tab2 {position:relative;background-color:#000;background:url("/brand/infinia/asset/images/product/product_tabs01_2.png") 0 0 no-repeat;z-index:1000;height:87px;}
+.product_tab2_3 {background:url("/brand/infinia/asset/images/product/product_tabs02_2.png") 0 0 no-repeat;}
+.product_tab2 span {display:none;}
+.product_tab2 a {display:block;width:100%;height:100%;}
+.product_tab2 ul {height:85px;z-index:2000;position:relative;}
+
+.product_tab2 ul.tab {}
+.product_tab2 ul.tab {width:670px;}
+.product_tab2 ul.tab li {width:156px;height:34px;margin-top:51px;position:absolute;}
+.product_tab2 ul.tab li.tab01 {left:11px;width:183px;}
+.product_tab2 ul.tab li.tab02 {left:163px;width:184px;}
+.product_tab2 ul.tab li.tab03 {left:322px;width:182px;}
+.product_tab2 ul.tab li.tab04 {left:478px;width:181px;}
+
+#productTabs.tab01 {background-position: 0;}
+#productTabs.tab02 {background-position:-85px 0;}
+#productTabs.tab03 {background-position:-170px 0;}
+#productTabs.tab04 {background-position:-255px 0;}
+
+.product_tab2 ul.popup {position:absolute;left:787px;top:51px;height:34px;background:url("/brand/infinia/asset/images/product/product_tab_sbar.gif") 105px 12px no-repeat;}
+.product_tab2 ul.popup li {display:inline-block;*display:inline;*zoom:1;height:34px;}
+.product_tab2 ul.popup li.tab05 {width:102px;background:url("/brand/infinia/asset/images/product/product_tab05.gif") 15px 12px no-repeat;}
+.product_tab2 ul.popup li.tab05 a:hover {background:url("/brand/infinia/asset/images/product/product_tab05_on.gif") 15px 12px no-repeat;}
+.product_tab2 ul.popup li.tab06 {width:83px;background:url("/brand/infinia/asset/images/product/product_tab06.gif") 15px 12px no-repeat;*margin-left:5px;}
+.product_tab2 ul.popup li.tab06 a:hover {background:url("/brand/infinia/asset/images/product/product_tab06_on.gif") 15px 12px no-repeat;}
