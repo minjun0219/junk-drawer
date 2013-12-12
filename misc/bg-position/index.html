@@ -61,9 +61,9 @@
 							<tr>
 								<th>Pixel</th>
 								<td>
-									<input type="text" name="px_x" value="" style="width:80px" class="text" placeholder="x" />&nbsp;px
+									<input type="text" name="px_x" value="10" style="width:80px" class="text" placeholder="x" />&nbsp;px
 									&nbsp;/&nbsp;
-									<input type="text" name="px_y" value="" style="width:80px" class="text" placeholder="y" />&nbsp;px
+									<input type="text" name="px_y" value="0" style="width:80px" class="text" placeholder="y" />&nbsp;px
 								</td>
 							</tr>
 							<tr>
@@ -110,12 +110,15 @@ function bgposition_loop(f){
 		t.setAttribute("class", c);
 		t.appendChild( document.createTextNode( v ) );
 		return t;
+	},
+	num = function(number) {
+		return (number > 0 ? '-' + number : number) + (number !== 0 ? 'px' : '');
 	}
 
 	var b = document.createElement('div');
 	b.appendChild( document.createElement('hr') );
 	for(var i=0; i<n; i++){
-		var po = ps == "x" ? ( ( i * px[0] ) + "px " + px[1] + "px" ) : ( px[0] + "px " + ( i * px[1] ) + "px" );
+		var po = ps == "x" ? ( num( i * px[0] ) + " " + num( px[1] ) ) : ( num( px[0] ) + " " + num( i * px[1] ) );
 		b.appendChild( document.createTextNode( ( s.indexOf("%") > -1 ) ? s.replace("%", ( i+1 ) ) : s ) );
 		b.appendChild( document.createTextNode('{') );
 		b.appendChild( span("property","background-position") );
