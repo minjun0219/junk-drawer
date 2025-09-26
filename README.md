@@ -1,5 +1,7 @@
 # Junk Drawer
 
+마크업 개발자로 일할 때 코드 조각을 모아놓은 곳 입니다.
+
 ### css
 
 - [progressbar01](http://minjun0219.github.io/junk-drawer/css/progressbar01/)
